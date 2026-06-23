@@ -5,11 +5,10 @@ const timeOf = (dtTxt: string) => dtTxt.slice(11, 16);
 const round1 = (n: number) => Math.round(n * 10) / 10;
 
 export function toHourlyToday(forecast: OwmForecast): HourlyPoint[] {
-  if (forecast.list.length === 0) return [];
-  const firstDate = dateOf(forecast.list[0].dt_txt);
-  return forecast.list
-    .filter((i) => dateOf(i.dt_txt) === firstDate)
-    .map((i) => ({ time: timeOf(i.dt_txt), temp: i.main.temp }));
+  // The free tier returns the forecast in 3-hour steps. Plot the next ~24h
+  // (up to 8 points) so the hourly chart always shows a full line — filtering
+  // strictly to today's calendar date leaves it nearly empty late in the day.
+  return forecast.list.slice(0, 8).map((i) => ({ time: timeOf(i.dt_txt), temp: i.main.temp }));
 }
 
 export function toDailyForecast(forecast: OwmForecast): DailyForecast[] {

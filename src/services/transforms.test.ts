@@ -21,13 +21,28 @@ const forecast: OwmForecast = {
 };
 
 describe('toHourlyToday', () => {
-  it('returns only the earliest date points as {time,temp}', () => {
-    const pts = toHourlyToday(forecast);
-    expect(pts).toEqual([
-      { time: '09:00', temp: 18 },
-      { time: '12:00', temp: 22 },
-      { time: '15:00', temp: 20 },
+  const hourly: OwmForecast = {
+    city: { name: 'Kyiv', country: 'UA' },
+    list: [
+      mk('2026-06-23 18:00:00', 19),
+      mk('2026-06-23 21:00:00', 17),
+      mk('2026-06-24 00:00:00', 15),
+    ],
+  };
+  it('maps the next 3-hour points to {time,temp}', () => {
+    expect(toHourlyToday(hourly)).toEqual([
+      { time: '18:00', temp: 19 },
+      { time: '21:00', temp: 17 },
+      { time: '00:00', temp: 15 },
     ]);
+  });
+  it('caps at 8 points (24h of 3-hour steps)', () => {
+    const many: OwmForecast = { city: hourly.city, list: Array.from({ length: 12 }, (_, i) =>
+      mk(`2026-06-23 ${String(i).padStart(2, '0')}:00:00`, 10 + i)) };
+    expect(toHourlyToday(many)).toHaveLength(8);
+  });
+  it('returns [] for an empty list', () => {
+    expect(toHourlyToday({ city: hourly.city, list: [] })).toEqual([]);
   });
 });
 
