@@ -60,4 +60,4 @@ Geocoding endpoints used here are all on the free tier).
 Deployed on Vercel. Set `VITE_OPENWEATHER_API_KEY` as an environment variable in the Vercel project;
 `vercel.json` provides the SPA rewrite.
 
-Live: <DEPLOYED_URL>
+Live: <https://weather-app-test-eight.vercel.app/>
