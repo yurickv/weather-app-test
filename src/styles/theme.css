@@ -1,0 +1,9 @@
+:root {
+  --bg: #f0f4f8; --surface: #ffffff; --text: #1a2330; --muted: #5b6b7c;
+  --accent: #2f7ed8; --border: #d8e0e8; --shadow: rgba(0,0,0,0.08);
+}
+[data-theme="night"] {
+  --bg: #0f1722; --surface: #1a2535; --text: #e6edf5; --muted: #9fb0c2;
+  --accent: #5aa0ec; --border: #2a3a4f; --shadow: rgba(0,0,0,0.4);
+}
+body { background: var(--bg); color: var(--text); transition: background .2s, color .2s; }
