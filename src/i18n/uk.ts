@@ -1,0 +1,27 @@
+import type { Dict } from './en';
+
+export const uk: Dict = {
+  appTitle: 'Погода',
+  tabHome: 'Головна',
+  tabFavorites: 'Вибране',
+  searchPlaceholder: 'Пошук міста…',
+  noMatches: 'Нічого не знайдено',
+  addToFavorites: 'Додати у вибране',
+  removeFromFavorites: 'Видалити з вибраного',
+  addBlock: 'Додати блок',
+  today: 'Сьогодні',
+  fiveDay: '5 днів',
+  deleteBlock: 'Видалити блок',
+  confirmDeleteBlock: 'Видалити цей блок погоди?',
+  cancel: 'Скасувати',
+  confirm: 'Видалити',
+  maxFavoritesTitle: 'Досягнуто ліміт вибраного',
+  maxFavoritesBody: 'Щоб додати місто, спершу видаліть інше — максимум 5.',
+  errorCityNotFound: 'Місто не знайдено',
+  errorGeneric: 'Не вдалося завантажити погоду. Спробуйте ще раз.',
+  retry: 'Повторити',
+  feelsLike: 'Відчувається як',
+  humidity: 'Вологість',
+  wind: 'Вітер',
+  emptyFavorites: 'Поки немає вибраних міст.',
+};
