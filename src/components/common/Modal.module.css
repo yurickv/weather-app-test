@@ -1,0 +1,6 @@
+.backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 100; }
+.modal { background: var(--surface); color: var(--text); border-radius: 12px; padding: 24px; max-width: 90vw; width: 360px; box-shadow: 0 8px 30px var(--shadow); }
+.title { margin: 0 0 12px; font-size: 1.1rem; }
+.actions { display: flex; gap: 12px; justify-content: flex-end; margin-top: 20px; }
+.btn { padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border); cursor: pointer; background: var(--surface); color: var(--text); }
+.confirm { background: var(--accent); color: #fff; border-color: var(--accent); }
