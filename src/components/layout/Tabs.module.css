@@ -1,0 +1,3 @@
+.tabs { display: flex; gap: 8px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+.tab { padding: 10px 16px; background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; color: var(--muted); font-size: 1rem; }
+.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
