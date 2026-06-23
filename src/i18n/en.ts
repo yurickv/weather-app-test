@@ -13,6 +13,7 @@ export const en = {
   confirmDeleteBlock: 'Delete this weather block?',
   cancel: 'Cancel',
   confirm: 'Delete',
+  ok: 'OK',
   maxFavoritesTitle: 'Favorites limit reached',
   maxFavoritesBody: 'To add a city, remove one first — maximum is 5.',
   errorCityNotFound: 'City not found',

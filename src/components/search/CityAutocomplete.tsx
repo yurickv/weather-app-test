@@ -19,9 +19,14 @@ export default function CityAutocomplete({ onSelect }: { onSelect: (c: City) => 
   useEffect(() => {
     const q = debounced.trim();
     if (!q) { setResults([]); setSearched(false); return; }
-    let active = true;
-    searchCities(q).then((r) => { if (active) { setResults(r); setSearched(true); setOpen(true); } }).catch(() => { if (active) { setResults([]); setSearched(true); } });
-    return () => { active = false; };
+    const controller = new AbortController();
+    searchCities(q, controller.signal)
+      .then((r) => { setResults(r); setSearched(true); setOpen(true); })
+      .catch((e: unknown) => {
+        if (e instanceof DOMException && e.name === 'AbortError') return;
+        setResults([]); setSearched(true);
+      });
+    return () => controller.abort();
   }, [debounced]);
 
   const pick = (s: GeoSuggestion) => { onSelect(toCity(s)); setQuery(label(s)); setOpen(false); };

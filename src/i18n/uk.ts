@@ -15,6 +15,7 @@ export const uk: Dict = {
   confirmDeleteBlock: 'Видалити цей блок погоди?',
   cancel: 'Скасувати',
   confirm: 'Видалити',
+  ok: 'Зрозуміло',
   maxFavoritesTitle: 'Досягнуто ліміт вибраного',
   maxFavoritesBody: 'Щоб додати місто, спершу видаліть інше — максимум 5.',
   errorCityNotFound: 'Місто не знайдено',

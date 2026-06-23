@@ -69,7 +69,7 @@ export default function WeatherBlock({ city, period, allowCityEdit, allowDelete,
         confirmLabel={t('confirm')} cancelLabel={t('cancel')}
         onConfirm={() => { setConfirmDelete(false); onDelete(); }} onCancel={() => setConfirmDelete(false)} />
       <Modal open={maxAlert} mode="alert" title={t('maxFavoritesTitle')}
-        confirmLabel={t('cancel')} onCancel={() => setMaxAlert(false)}>
+        confirmLabel={t('ok')} onCancel={() => setMaxAlert(false)}>
         {t('maxFavoritesBody')}
       </Modal>
     </div>
